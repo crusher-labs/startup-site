@@ -34,4 +34,5 @@ desktop.ini
 .vscode/
 .idea/
 *.swp
-*.swonode_modules.corrupt/
+*.swo
+node_modules.corrupt/
