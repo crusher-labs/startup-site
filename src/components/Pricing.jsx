@@ -58,13 +58,13 @@ const Pricing = () => {
     }
 
   return (
-    <section className="py-20 sm:py-24 bg-gradient-to-b from-[#17001a] to-[#08001a]">
+    <section className="py-20 sm:py-24 bg-gradient-to-b from-card to-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
             Flexible Pricing for Every Team
           </h2>
-          <p className="mt-4 text-lg text-gray-400">
+          <p className="mt-4 text-lg text-muted-foreground">
             Choose a plan that scales with your research needs. Start for free, no credit card required.
           </p>
         </div>
@@ -93,13 +93,13 @@ const Pricing = () => {
 
               <div className="flex-grow">
                 <h3 className="text-2xl font-semibold text-white">{plan.name}</h3>
-                <p className="mt-2 text-gray-400">{plan.description}</p>
+                <p className="mt-2 text-muted-foreground">{plan.description}</p>
                 <div className="mt-6 flex items-baseline gap-x-2">
                   <span className="text-4xl font-bold tracking-tight text-white">{plan.price}</span>
-                  {plan.frequency && <span className="text-sm font-semibold text-gray-400">{plan.frequency}</span>}
+                  {plan.frequency && <span className="text-sm font-semibold text-muted-foreground">{plan.frequency}</span>}
                 </div>
 
-                <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-300">
+                <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-muted-foreground">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <Check className="h-6 w-5 flex-none text-blue-400" aria-hidden="true" />
@@ -115,7 +115,7 @@ const Pricing = () => {
                 className={`mt-8 w-full ${
                   plan.isFeatured
                     ? 'bg-blue-600 hover:bg-blue-500 text-white'
-                    : 'border-white/20 hover:bg-white/10 text-white'
+                    : 'border-border hover:bg-white/10 text-white'
                 }`}
               >
                 Get Started

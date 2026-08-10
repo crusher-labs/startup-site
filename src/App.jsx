@@ -28,9 +28,9 @@ function App() {
     <>
       <Helmet>
         <title>Eclipse - Connect your world with precision</title>
-        <meta name="description" content="Discover the cutting-edge breakthroughs in science. All in one platform." />
+        <meta name="description" content="Deploy previews, logs, metrics, and incident tracking in one place." />
       </Helmet>
-      <div className="min-h-screen overflow-hidden bg-[#08001a] text-white">
+      <div className="min-h-screen overflow-hidden bg-background text-white">
         <Header onScrollTo={handleScrollTo} />
         <main>
           <Hero onScrollTo={handleScrollTo} />

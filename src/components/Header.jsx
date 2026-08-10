@@ -30,7 +30,7 @@ const Header = ({ onScrollTo }) => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-gradient-to-r from-[#08001a] to-[#17001a]/80 backdrop-blur-lg border-b border-white/5"
+      className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-gradient-to-r from-background to-card/80 backdrop-blur-lg border-b border-white/5"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -45,7 +45,7 @@ const Header = ({ onScrollTo }) => {
             <button
               key={item}
               onClick={() => handleNavClick(item)}
-              className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+              className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
             >
               {item}
             </button>
@@ -56,7 +56,7 @@ const Header = ({ onScrollTo }) => {
           <Button
             onClick={handleSignIn}
             variant="outline"
-            className="border-white/10 hover:bg-white/5 text-white"
+            className="border-white/10 hover:bg-card text-white"
           >
             Sign in
           </Button>

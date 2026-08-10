@@ -1,22 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   Eclipse - "Corona"
+   Observability / deploy-platform identity: near-black ground, a single solar
+   amber corona accent, mono display headlines (dev-tool feel), a CSS corona-ring
+   motif. Deliberately NOT the purple->blue SaaS gradient. Contrast: white +
+   amber on near-black clear AA.
+   --------------------------------------------------------------------------- */
+
 @layer base {
+  :root {
+    --background: 240 10% 5%;       /* near-black, cool cast */
+    --foreground: 40 20% 96%;
+    --card: 240 9% 8%;
+    --card-foreground: 40 20% 96%;
+    --popover: 240 9% 8%;
+    --popover-foreground: 40 20% 96%;
+    --primary: 28 100% 62%;         /* solar amber corona */
+    --primary-foreground: 240 10% 6%;
+    --secondary: 240 8% 13%;
+    --secondary-foreground: 40 20% 92%;
+    --muted: 240 8% 12%;
+    --muted-foreground: 40 8% 66%;  /* ~6:1 on near-black */
+    --accent: 28 100% 62%;
+    --accent-foreground: 240 10% 6%;
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 40 20% 96%;
+    --border: 240 8% 16%;
+    --input: 240 8% 16%;
+    --ring: 28 100% 62%;
+    --radius: 0.5rem;
+  }
+
   body {
-    background: linear-gradient(to right, #08001a, #17001a);
-    @apply text-white antialiased;
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   }
 }
 
 @layer utilities {
+  /* Mono display - technical/dev-tool headlines. */
+  .font-display {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  /* Amber text accent (replaces the cliché purple gradient text). */
   .text-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: hsl(var(--primary));
+    text-shadow: 0 0 28px hsl(28 100% 62% / 0.35);
+  }
+
+  /* Solar corona glow backdrop. */
+  .corona {
+    background:
+      radial-gradient(45% 45% at 50% 40%, hsl(28 100% 62% / 0.16) 0%, transparent 62%),
+      radial-gradient(30% 30% at 80% 80%, hsl(280 60% 45% / 0.10) 0%, transparent 70%);
+  }
+
+  /* The eclipse ring itself (CSS only). */
+  .eclipse-ring {
+    border-radius: 9999px;
+    background: radial-gradient(circle at 50% 50%, hsl(240 10% 5%) 58%, transparent 59%),
+      conic-gradient(from 0deg, hsl(28 100% 62% / 0.0), hsl(28 100% 62% / 0.85), hsl(40 100% 70% / 0.7), hsl(28 100% 62% / 0.0));
+    box-shadow: 0 0 80px -10px hsl(28 100% 62% / 0.45);
+    filter: blur(0.4px);
+  }
+
+  /* Faint orbital grid. */
+  .orbital-grid {
+    background-image:
+      linear-gradient(hsl(40 20% 96% / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(40 20% 96% / 0.035) 1px, transparent 1px);
+    background-size: 52px 52px;
   }
 }

@@ -50,13 +50,13 @@ const cardVariants = {
 
 const Solutions = () => {
   return (
-    <section className="py-20 sm:py-24 bg-[#17001a]">
+    <section className="py-20 sm:py-24 bg-card">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
             Comprehensive Solutions for Modern Science
           </h2>
-          <p className="mt-4 text-lg text-gray-400">
+          <p className="mt-4 text-lg text-muted-foreground">
             From initial research to clinical application, our platform provides the tools you need to innovate and succeed.
           </p>
         </div>
@@ -76,7 +76,7 @@ const Solutions = () => {
                 <solution.icon className="w-6 h-6 text-blue-400" />
               </div>
               <h3 className="mt-6 text-xl font-semibold text-white">{solution.title}</h3>
-              <p className="mt-2 text-gray-400">{solution.description}</p>
+              <p className="mt-2 text-muted-foreground">{solution.description}</p>
             </motion.div>
           ))}
         </div>
